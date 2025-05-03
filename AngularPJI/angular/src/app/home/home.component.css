@@ -1,0 +1,16 @@
+div.text-center{
+    text-align: center;
+  }
+
+  .card{
+          border:none;
+          width:500px;
+          padding:40px;
+          position:absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          background: rgb(146, 221, 223);
+
+          /* background: linear-gradient(90deg, rgb(166, 209, 241) 0%, rgb(215, 195, 255) 100%); */
+      }

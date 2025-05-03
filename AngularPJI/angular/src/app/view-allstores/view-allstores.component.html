@@ -1,0 +1,35 @@
+<h1 class="sign" align="center">Store List</h1>
+<br>
+<table  class="table table-striped table-hover table-bordered" style="width:85%; font-family: 'Times New Roman', serif;" align="center">
+  <thead>
+      <tr>
+          <th>S.No</th>
+          <th>Store Number</th>
+          <th>City</th>
+          <th>Zipcode</th>
+          <th>Actions</th>
+      </tr>
+  </thead>
+
+  <tbody>
+            <tr *ngFor="let store of stores | paginate: { itemsPerPage: 5, currentPage: p };index as id ">
+              <td>{{id+1}}</td>
+              <td>{{store.number}}</td>
+              <td>{{store.city}}</td>
+              <td>{{store.zipcode}}</td>
+
+              <td> <button (click)="updateStore(store.number)"class="btn btn-success" type="submit">Update</button>&nbsp;
+                <button (click)="deletestore(store.number)"class="btn btn-danger" type="submit">Delete</button>&nbsp;
+              </td>
+          </tr>
+</tbody>
+
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Pagination controls -->
+<!-- <pagination-controls (pageChange)="pageChanged($event)" class="my-pagination"
+previousLabel="Previous" nextLabel="Next"></pagination-controls> -->
+
+
+

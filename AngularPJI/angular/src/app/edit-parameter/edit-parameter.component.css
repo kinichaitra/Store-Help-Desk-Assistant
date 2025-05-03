@@ -1,0 +1,8 @@
+.sign {
+  padding-top: 9px;
+  color: #01396b;
+  color: linear-gradient(70 deg, rgb(47, 96, 134) 0%, rgb(89,87,92)100%);
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 40px;
+}

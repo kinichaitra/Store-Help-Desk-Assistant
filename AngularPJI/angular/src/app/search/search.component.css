@@ -1,0 +1,48 @@
+.sign {
+    padding-top: 9px;
+    color: #01396b;
+    color: linear-gradient(70 deg, rgb(47, 96, 134) 0%, rgb(89,87,92)100%);
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+.submit {
+  cursor: pointer;
+    border-radius: 1em;
+    color: #fff;
+    background: linear-gradient(70deg, rgb(186, 100, 198) 2%, rgb(73, 31, 172)100%);
+    border: 10;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family:'Times New Roman', serif ;
+    font-size: 14px;
+    box-shadow: 10px 10px 5px light rgb(88, 86, 86);
+
+
+}
+
+  .reset {
+
+    cursor: pointer;
+    border-radius: 1em;
+    color: #fff;
+    background: linear-gradient(70deg, rgb(186, 100, 198) 2%, rgb(73, 31, 172)100%);
+    border: 10;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    box-shadow: 10px 10px 5px light grey;
+
+    }
+
+    #container{
+      text-align: center;
+
+    }
+
+

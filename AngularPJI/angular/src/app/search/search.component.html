@@ -1,0 +1,47 @@
+
+<div class="main">
+    <h3 class="sign" align="center">Search Stores</h3>
+    <br><br>
+
+<div class="row">
+    <div  class="col-lg-3"></div>
+    <div  class="col-lg-6">
+
+    <form class="form1" (ngSubmit)="submit()" align="center">
+        <div class="form-group">
+            <!-- <label for="num">Store Number</label> -->
+            <input type="number" class="form-control" align="center" placeholder="Search by Store Number" name="num"
+            [(ngModel)]="num" title="Enter numbers only">
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+            <!-- <label for="num">City</label> -->
+            <input type="text" class="form-control" align="center" placeholder="Search by City name" name="city"
+             [(ngModel)]="city" title="Enter city name">
+        </div>
+
+
+   <pre></pre>
+        <div class="form-group">
+            <!-- <label for="num">Zipcode</label> -->
+            <input type="number" class="form-control" align="center" placeholder="Search by Zipcode" name="zipcode"
+             [(ngModel)]="zipcode" title="Enter numbers only">
+        </div>
+
+
+        <div style="color :red; text-align:center;padding-top: 15px;font-weight:200;font:bold;
+        font-family: 'Times New Roman', serif;">{{message}}</div>
+        <br>
+
+        <button type="submit" class="submit" align="center" >Search</button>
+        <button type="reset" class="submit" align="center">Reset</button>
+
+
+    </form>
+    </div>
+    <div  class="col-lg-5"></div>
+
+</div>
+</div>

@@ -1,0 +1,34 @@
+
+<h1 class="sign" align="center">Parameter List</h1>
+<br>
+
+<div style="display: flex; justify-content:center; align-items: center; height: 11px;">
+<button (click)="addParameter()" class="btn btn-info" type="submit">Add Parameter</button>
+</div>
+<br>
+<table  class="table table-striped table-hover table-bordered" style="width:65%" align="center">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+   </thead>
+
+    <tbody>
+          <tr *ngFor="let para of parameters| paginate: { itemsPerPage: 5, currentPage: p }; index as id">
+            <td>{{id+1}}</td>
+            <td>{{para.parameter}}</td>
+            <td>{{para.description}}</td>
+
+            <td> <button (click)="editParameter(para.parameter)" class="btn btn-success" type="submit">Edit</button>&nbsp;
+                 <button (click)="deleteParameter(para.parameter)" class="btn btn-danger" type="submit">Delete</button>&nbsp;
+            </td>
+         </tr>
+
+      </tbody>
+</table>
+<!-- Pagination controls -->
+<pagination-controls (pageChange)="pageChanged($event)" class="my-pagination"
+previousLabel="Previous" nextLabel="Next"></pagination-controls>

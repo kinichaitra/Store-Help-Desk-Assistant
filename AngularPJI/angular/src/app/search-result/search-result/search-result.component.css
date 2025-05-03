@@ -1,0 +1,15 @@
+tr:nth-child(even) {
+  /* background-color: #55c0f6; */
+  background-color: rgb(140, 218, 227);
+}
+td,th{
+  text-align: center;
+}
+.sign {
+  color: #01396b;
+  color: linear-gradient(70 deg, rgb(47, 96, 134) 0%, rgb(89,87,92)100%);
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+

@@ -1,0 +1,65 @@
+<div class="main">
+  <h3 class="sign" align="center">Update Store</h3>
+
+  <form class="updateStore" (ngSubmit)="submit()"  #updateForm="ngForm">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+
+          <div class="form-group">
+          <label for="number">Enter Store Number:</label><br>
+          <input type="number"
+                 class="form-control"
+                 placeholder="Store Number"
+                 name="number"
+                 id="number"
+          [(ngModel)]="store.number"
+          disabled="">
+          </div>
+          <pre></pre>
+
+          <div class="form-group">
+            <label for="city">Enter city name :</label><br>
+            <input type="text"
+                   class="form-control"
+                   placeholder="City name"
+                   name="city"
+                   id="city"
+             [(ngModel)]="store.city"
+                  title="Enter city name"
+                  #city="ngModel"
+                  required
+                  minlength="2">
+                  <div *ngIf="city.invalid && (city.dirty || city.touched)" class="text-danger">
+                  </div>
+        </div>
+          <pre></pre>
+
+          <div class="form-group">
+          <label for="zipcode">Enter zipcode :</label><br>
+          <input type="number"
+                 class="form-control"
+                 placeholder="Zipcode (between 4 and 8 digits)"
+                 name="zipcode"
+                 id="zipcode"
+                 pattern="[0-9]{4,8}"
+           [(ngModel)]="store.zipcode"
+           #zipcode="ngModel"
+           required
+                 title="Enter number only">
+                 <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)" class="text-danger">
+                  <!-- <div *ngIf="zipcode.errors?.required">Zipcode is required.</div>
+                  <div *ngIf="zipcode.errors?.pattern">Zipcode must be between 4 and 8 digits.</div> -->
+                </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="cursor: pointer;"[disabled]="updateForm.invalid">Update</button>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

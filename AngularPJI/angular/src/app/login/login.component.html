@@ -1,0 +1,36 @@
+
+<div class="main">
+<p class="sign" align="center">LOGIN</p>
+
+<form class="form1" [formGroup]="loginForm" (ngSubmit)="submit()" align="center">
+
+    <input type="text" class="formControl un" align="center"
+            placeholder="Username"
+            name="userName"
+            formControlName="userName"
+    [ngClass]="{'is-invalid':submitted && loginForm.controls.userName.errors}" />
+
+    <div *ngIf="submitted && loginForm.controls.userName.errors"
+         class="text-danger"
+         style="text-align:left;padding-left: 70px;">Username is required</div>
+    <div style="color :red; text-align:left;padding-top:15px;padding-left: 60px;padding-bottom: 40px;font-weight:200; font:bold;"></div>
+
+    <input type="password" class="formControl pass" align="center"
+            placeholder="Password"
+            name="password"
+            formControlName="password"
+    [ngClass]="{'is-invalid':submitted && loginForm.controls.password.errors}" />
+
+    <div *ngIf="submitted && loginForm.controls.password.errors"
+          class="text-danger"
+          style="text-align:left;padding-left: 70px;">Password is required</div>
+    <div style="color :red; text-align:left;padding-top:15px;padding-left: 60px;padding-bottom: 30px;font-weight:200;font:bold;"></div>
+
+    <button type="submit" class="submit" align="center">Login</button>
+    <button type="reset" class="reset" align="center">Reset</button>
+    <br>
+
+    <div style="color :red; text-align:center;padding-top: 20px;font: weight 4px;font:bold;">{{validCred}}</div>
+</form>
+</div>
+

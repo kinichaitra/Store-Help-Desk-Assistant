@@ -1,0 +1,74 @@
+<div class="container">
+  <h2 class="sign" style="text-align: center;">Add New User</h2>
+  <br>
+
+  <div class="row">
+    <div  class="col-lg-3"></div>
+    <div  class="col-lg-6">
+      <form (ngSubmit)="submit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Enter Name:</label>
+          <input type="text" id="name" class="form-control"
+                 placeholder="Name"
+                 [(ngModel)]="user.name" name="name" #name="ngModel" required="true">
+
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+            <div *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</div>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="accessLevel">Select Access Level:</label>
+          <select id="accessLevel" class="form-control" aria-placeholder="Select Access Level"
+                  [(ngModel)]="user.accessLevel" name="accessLevel" #accessLevel="ngModel"required="true">
+                  <!-- <option value="">Select Access Level</option> -->
+            <option value="MN">Manager</option>
+            <option value="AD">Admin</option>
+            <option value="HD">Helpdesk</option>
+          </select>
+          <div *ngIf="accessLevel.invalid && (accessLevel.dirty || accessLevel.touched)" class="alert alert-danger">
+            <div *ngIf="accessLevel.errors?.['required']">Access Level is required.</div>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="userName">Enter Username:</label>
+          <input type="text" id="userName" class="form-control"
+                 placeholder="Username"
+                 [(ngModel)]="user.userName" name="userName" #userName="ngModel"required="true">
+          <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
+            <div *ngIf="userName.errors?.['required']">Username is required.</div>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="password">Enter Password:</label>
+          <input type="password" id="password" class="form-control"
+                 placeholder="Password "
+                 [(ngModel)]="user.password" name="password" #password="ngModel"required="true">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors?.['required']">Password is required.</div>
+            <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+          </div>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary" style="text-align: center;" [disabled]="userForm.invalid">Add User</button>&nbsp;
+        <button type="reset" class="btn btn-primary" style="text-align: center;">Reset</button>
+      </form>
+    </div>
+    <div  class="col-lg-5"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+

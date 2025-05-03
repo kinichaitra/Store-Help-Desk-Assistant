@@ -1,0 +1,14 @@
+.navbar-custom{
+    background-color: rgb(13, 47, 122);
+    height:80px;
+    font-size: 17px;
+    font-family: 'Times New Roman', serif;
+}
+
+.active-link {
+  color: rgb(91, 224, 239); /* Change this to your desired active color */
+}
+
+.inactive-link {
+  color: white; /* Change this to your original color */
+}

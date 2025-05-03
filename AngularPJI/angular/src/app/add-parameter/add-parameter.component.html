@@ -1,0 +1,40 @@
+<div class="main">
+
+  <h3 class="sign" align="center">Add Parameter</h3>
+  <br><br>
+
+<div class="row">
+  <div  class="col-lg-3"></div>
+  <div  class="col-lg-6">
+
+  <form class="form1" (ngSubmit)="submit()" align="center">
+
+      <div class="form-group">
+          <label for="parameter">Enter Parameter</label>
+          <input type="text" class="form-control" align="center" placeholder="Parameter" name="parameter" title="parameter in string only"
+          [(ngModel)]="para.parameter">
+      </div>
+
+      <pre></pre>
+
+      <div class="form-group">
+        <label for="parameterDescription">Enter Parameter Description </label>
+          <input type="text" class="form-control" align="center" placeholder="Parameter Description" name="Parameter Description" title="Description is in string"
+           [(ngModel)]="para.description">
+      </div>
+
+
+      <!-- <div style="color :red; text-align:center;padding-top: 15px;font-weight:200;font:bold;
+      font-family: 'Times New Roman', serif;">{{message}}</div>
+      <br> -->
+
+      <button type="submit" class="btn btn-primary" align="center" >Submit</button>
+      <button type="reset" class="btn btn-primary" align="center">Reset</button>
+
+
+  </form>
+  </div>
+  <div  class="col-lg-5"></div>
+
+</div>
+</div>

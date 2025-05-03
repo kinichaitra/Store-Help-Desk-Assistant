@@ -1,0 +1,68 @@
+ <body>
+  <div *ngIf="loggedIn()">
+    <nav class="navbar navbar-expand-lg navbar-blue bg-blue navbar-custom">
+      <div class="container-fluid">
+        <div class="col-lg-0.5"></div>
+        <div class="col-lg-0.5">
+          <a class="navbar-brand" style="cursor: pointer;color:white" [routerLink]="['/home']">Store Helpdesk</a>
+        </div>
+        <div class="col-lg-7">
+          <div class="collapse navbar-collapse" id="navbarNav" *ngIf="router.url != '/home'">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/search', 'inactive-link': router.url !== '/search'}" routerLink="/search">Search store</a>
+              </li>
+              <li class="nav-item" *ngIf="isAdmin()">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/addstore', 'inactive-link': router.url !== '/addstore'}"
+                routerLink="/addstore">AddStore</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/viewstores', 'inactive-link': router.url !== '/viewstores'}"
+                routerLink="/viewstores">Manage Stores</a>
+              </li>
+
+
+              <li class="nav-item" *ngIf="isHelpdesk()">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/upgrade', 'inactive-link': router.url !== '/upgrade'}"
+                routerLink="/upgrade">Upgrade StoreParameter</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/viewParameters',
+                                                'inactive-link': router.url !== '/viewParameters'}"
+                 routerLink="/viewParameters">Manage Parameters</a>
+              </li>
+
+              <li class="nav-item" *ngIf="isAdmin()">
+                <a class="nav-link"
+                [ngClass]="{'active-link': router.url === '/userList',
+                            'inactive-link': router.url !== '/userList'}"
+                 routerLink="/userList">User List</a>
+              </li>
+
+              <li class="nav-item" *ngIf="isAdmin()">
+                <a class="nav-link" [ngClass]="{'active-link': router.url === '/add-user', 'inactive-link': router.url !== '/add-user'}"
+                 routerLink="/add-user">Add User</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2" style="color:rgb(255, 255, 255)">
+          <div *ngIf="router.url != '/home'">
+            <p>User Name: {{name}} &nbsp;<br> AccessLevel: {{accessLevel}}</p>
+          </div>
+        </div>
+        <div class="col-lg-1" align="right">
+          <a href="/logout" class="btn btn-primary btn-md">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+          </a>
+        </div>
+      </div>
+    </nav>
+    <br>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+

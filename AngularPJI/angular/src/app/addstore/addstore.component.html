@@ -1,0 +1,44 @@
+<h2 class="sign">Add New Store</h2>
+    <form [formGroup]="addData" (ngSubmit)="save()">
+      <div class="row">
+        <div  class="col-lg-3"></div>
+        <div  class="col-lg-6">
+            <!-- <div class="form-group mb-3"> -->
+                <label for="number">Enter Store Number :</label>
+                <input type="number" class="form-control" placeholder="Store Number" formControlName="number"
+                [ngClass]="{'is-invalid':submitted && addData.controls.number.errors}"
+                title="Enter numbers only"required="true">
+                <div *ngIf="submitted && addData.controls.number.errors" class="text-danger">Number is required</div>
+               <br>
+
+              <label for="number">Enter city Name :</label>
+              <input type="text" class="form-control" placeholder="City name"formControlName="city"
+                [ngClass]="{'is-invalid':submitted && addData.controls.city.errors}"
+                title="Enter name of city"required="true">
+               <div *ngIf="submitted && addData.controls.city.errors"class="text-danger">City name is required</div>
+               <br>
+
+              <label for="number">Enter zipcode:</label>
+              <input type="number"class="form-control" placeholder="Zipcode"formControlName="zipcode"
+              [ngClass]="{'is-invalid':submitted && addData.controls.zipcode.errors}"
+              title="Enter numbers only"required="true">
+              <div *ngIf="submitted && addData.controls.zipcode.errors" class="text-danger">Zipcode is required
+              </div>
+              <br>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                    <button type="reset" class="btn btn-primary">Reset</button>
+
+                    <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>Store added successfully.</strong>
+                      <button (click)="removeMessage()"  type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+    <!-- </div> -->
+  </div>
+
+</div>
+      </form>
+
+
+

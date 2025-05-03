@@ -1,0 +1,77 @@
+<br>
+<form class="form1" (ngSubmit)="submit()" align="center" style="font-size:20px">
+        <input type="number" align="center" placeholder="Store Number" name="num"
+        [(ngModel)]="num" style="border-radius:5px;" title="Enter numbers only">&nbsp;
+
+        <input type="text"  align="center" placeholder="City" name="city"
+        [(ngModel)]="city" style="border-radius:5px;"title="Enter name of city"> &nbsp;
+
+        <input type="number"  align="center" placeholder="Zipcode" name="zipcode"
+        [(ngModel)]="zipcode" style="border-radius:5px;" title="Enter numbers only">&nbsp;
+
+    <button type="submit" class="submit" align="center" style="color: #fff;
+    background: linear-gradient(70deg, rgb(186, 100, 198) 2%, rgb(73, 31, 172)100%);
+    padding-right: 30px;
+    padding-bottom: 1px;
+    padding-top: 2px;border-radius: .5em;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    box-shadow: 10px 10px 5px light grey;">Search</button>
+
+    <button type="reset"class="submit" align="center" style="color: #fff;
+     background: linear-gradient(70deg, rgb(186, 100, 198) 2%, rgb(73, 31, 172)100%);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 1px;
+    padding-top: 2px;border-radius: 0.5em;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    box-shadow: 10px 10px 5px light grey;">Reset</button>
+
+
+</form>
+<br>
+<p style="text-align:center;font-size:15px;" class="text-danger">{{message}}</p>
+<p style="text-align:center;font-size:15px;" class="text-danger">{{message1}}</p>
+<p style="text-align:center;font-size:15px;" class="text-success">{{message2}}</p>
+
+<table  *ngIf="isNotEmpty()" class="table table-striped table-hover" style="width:76%;font-family: 'Times New Roman', serif;" align="center">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Store Number</th>
+            <th>City</th>
+            <th>Zipcode</th>
+            <th style="width:45%">Store Parameter Upgrade</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr *ngFor="let s of store; index as id">
+                <td>{{id+1}}</td>
+                <td #num >{{s.number}}</td>
+                <td>{{s.city}}</td>
+                <td>{{s.zipcode}}</td>
+                <td>
+                    <ng-multiselect-dropdown #a
+                    [placeholder]="'Parameter'"
+                    [settings]="dropdownSettings"
+                    [data]="parameter"
+                    [disabled]="disabled"
+                    [(ngModel)]="s.dropdownList"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                    (onDeSelect)="onItemDeSelect($event)"
+                  >
+                  </ng-multiselect-dropdown>
+                </td>
+<div>
+                <td align="center"><button (click)="update(num.innerHTML,s.dropdownList)" class= "btn btn-primary"
+                  style="font-family: 'Times New Roman', serif;" >Update</button></td>
+                </div>
+
+            </tr>
+    </tbody>
+
+</table>

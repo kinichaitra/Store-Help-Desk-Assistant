@@ -1,0 +1,38 @@
+<div class="main">
+  <h3 class="sign" align="center">Edit Parameter</h3>
+  <br><br>
+
+<div class="row">
+  <div  class="col-lg-3"></div>
+  <div  class="col-lg-6">
+
+  <form class="form1" (ngSubmit)="submit()" align="center">
+
+      <div class="form-group">
+          <label for="parameter">Parameter</label>
+          <input type="text" class="form-control" align="center" placeholder="Parameter"
+          name="parameter" title="parameter in string only" id="parameter"
+          [(ngModel)]="para.parameter" disabled>
+      </div>
+
+      <pre></pre>
+
+      <div class="form-group">
+        <label for="parameterDescription">Parameter Description </label>
+          <input type="text" class="form-control" align="center" placeholder="Parameter Description"
+           name="description" title="Description in string only" id="description"
+           [(ngModel)]="para.description">
+      </div>
+
+
+      <button type="submit" class="btn btn-success" align="center" >Edit</button>
+      <button type="reset" class="btn btn-primary" align="center">Reset</button>
+
+
+  </form>
+  </div>
+  <div  class="col-lg-5"></div>
+
+</div>
+</div>
+
